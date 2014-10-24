@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
- root :to => 'user#index'
+ root :to => 'users#index'
 
- resources :user
+ resources :users
+ resources :tweets
 
-
+ get '/login' => 'session#new'
+  post '/login' => 'session#create'
+  delete '/login' => 'session#delete'
 end
+
