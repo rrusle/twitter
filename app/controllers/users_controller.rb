@@ -1,4 +1,9 @@
 class UsersController < ApplicationController
+before_action :set_user, only: [:show, :edit, :update, :delete]
+  
+  def home
+  end
+
   def index
   	@users = User.all
   end
@@ -20,16 +25,24 @@ class UsersController < ApplicationController
   end 
 
   def edit 
-  	
+    @user = @current_user
+    redirect_to root_path unless @user.present?
   end 
 
   def update
+    if @user.update(user_params)
+        redirect_to @user, notice: 'User was successfully updated.' 
+      else
+        render :edit 
+      end
   end 
 
   def show
   end 
 
-  def delete 
+  def delete
+    @user.delete
+    redirect_to users_url, notice: 'User was successfully deleted.'  
   end 
 
 private 
@@ -39,7 +52,7 @@ def set_user
     end
     
 def user_params
-	params.require(:user).permit(:name, :email, :password, :password_confirmation)
+	params.require(:user).permit(:name, :avatar, :email, :password, :password_confirmation)
 	end 
 
 

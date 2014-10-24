@@ -1,0 +1,61 @@
+html {
+	background-color: linen;
+}
+
+.container {
+	max-width: 960px;
+	margin: auto;
+}
+
+header nav ul {
+	padding: 0;
+	margin: 0;
+}
+
+header nav ul li {
+	display: inline;
+	padding: 0 0.2em;
+}
+
+header nav ul li a {
+	text-decoration: none;
+}
+
+header nav ul li:hover {
+	display: inline;
+	background-color: white;
+}
+
+.field { 
+display: block;
+padding: 0.2em;
+font-size: 16px;
+
+}
+.field label, input[type=password] {
+display: block;
+padding: 0.2em;
+}
+
+.field label, input[type=text] {
+display :block;
+padding: 0.2em;
+
+}
+
+.avatar img {
+  width: 300px;
+}
+
+.actions {
+	display: block;
+	margin-top: 17px;
+	margin-left: 5px;
+	margin-bottom: 17px;
+}
+
+
+.hic h1 {
+		color: darkcyan;
+}
+

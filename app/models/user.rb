@@ -8,6 +8,7 @@
 #  created_at      :datetime
 #  updated_at      :datetime
 #  name            :string(255)
+#  avatar          :text
 #
 
 class User < ActiveRecord::Base

@@ -1,0 +1,12 @@
+<div class='alluser'>
+<tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= user.name %></td>
+        <td><%= link_to 'Show', user %></td>
+        <td><%= link_to 'Edit', edit_user_path(user) if @current_user.try(:id) == user.id %></td>
+        <td><%= link_to 'delete', user, method: :delete, data: { confirm: 'Are you sure?' } if @current_user.try(:id) == user.id %></td>
+      </tr><br>
+</tbody>
+<%end%>
+</div>
