@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-before_action :set_user, only: [:show, :edit, :update, :delete]
+before_action :set_user, only: [:show, :edit, :update, :destroy]
   
   def home
   end
@@ -40,11 +40,11 @@ before_action :set_user, only: [:show, :edit, :update, :delete]
   def show
   end 
 
-  def delete
-    @user.delete
-    redirect_to users_url, notice: 'User was successfully deleted.'  
-  end 
-
+  def destroy
+      @user.destroy
+      redirect_to users_url, notice: 'User was successfully delete.' 
+    
+  end
 private 
 
 def set_user

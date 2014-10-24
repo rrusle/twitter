@@ -1,5 +1,5 @@
 class TweetsController < ApplicationController
-  before_action :set_tweet, only: [:show, :edit, :update, :delete]
+  before_action :set_tweet, only: [:show, :edit, :update, :destroy]
 
 
   def index
@@ -50,8 +50,8 @@ class TweetsController < ApplicationController
   end
 
 
-  def delete
-    @tweet.delete
+  def destroy
+    @tweet.destroy
     
       redirect_to tweets_url, notice: 'Tweet was successfully deleted.'
       
