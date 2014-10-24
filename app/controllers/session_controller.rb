@@ -1,3 +1,4 @@
+class SessionController < ApplicationController
 # Login form
   def new
   end
@@ -18,3 +19,4 @@
     session[:user_id] = nil
     redirect_to root_path
   end
+end
