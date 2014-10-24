@@ -8,13 +8,14 @@ class UsersController < ApplicationController
   end
 
   def create 
-  	user = User.create user_params
-  		if @user.save
-			session[:user_id] = @user.id
-			redirect_to users_path
-		else 
-			render :new
-		end
+  	@user = User.new(user_params)
+
+   
+      if @user.save
+        redirect_to @user, notice: 'User was successfully created.' 
+      else
+        render :new 
+      end
 
   end 
 
@@ -28,10 +29,15 @@ class UsersController < ApplicationController
   def show
   end 
 
-  def destroy 
+  def delete 
   end 
 
 private 
+
+def set_user
+      @user = User.find(params[:id])
+    end
+    
 def user_params
 	params.require(:user).permit(:name, :email, :password, :password_confirmation)
 	end 
