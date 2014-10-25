@@ -1,16 +1,22 @@
 <p>
   <strong>Username:</strong>
-  
+  <%= @user.name %>
 </p>
 
 <div class="avatar">
 	<p>
 	  <strong>Image:</strong>
 	</p>
-	
-	
+	<%= image_tag @user.avatar %>
 </div>
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>
+
+<h3>Tweet</h3>
+
+<% @user.tweets.each do |tweet| %>
+	<p><%= link_to tweet.content, tweet %></p>
+<% end %>
+
 
