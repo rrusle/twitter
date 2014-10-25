@@ -18,19 +18,28 @@ class UsersController < ApplicationController
       end
 
   end 
-
+  
   def edit 
-  	
+    @user = @current_user
+    redirect_to root_path unless @user.present?
   end 
 
   def update
+      if @user.update(user_params)
+        redirect_to @user, notice: 'User was successfully updated.' 
+      else
+        render :edit 
+      end
   end 
 
   def show
   end 
 
-  def delete 
-  end 
+  def destroy
+      @user.destroy
+      redirect_to users_url, notice: 'User was successfully delete.' 
+    
+  end
 
 private 
 
