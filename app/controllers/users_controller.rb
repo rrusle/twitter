@@ -17,6 +17,7 @@ before_action :set_user, only: [:show, :edit, :update, :destroy]
   	@user = User.new(user_params)
 
       if @user.save
+        # binding.pry
         redirect_to @user, notice: 'User was successfully created.' 
       else
         render :new 
@@ -44,6 +45,20 @@ before_action :set_user, only: [:show, :edit, :update, :destroy]
       @user.destroy
       redirect_to users_url, notice: 'User was successfully delete.' 
     
+  end
+
+  def follow(other_user)
+    active_relationships.create(followed_id: other_user.id)
+  end
+
+  
+  def unfollow(other_user)
+    active_relationships.find_by(followed_id: other_user.id).destroy
+  end
+
+  # Returns true if the current user is following the other user.
+  def following?(other_user)
+    following.include?(other_user)
   end
 
   private 
