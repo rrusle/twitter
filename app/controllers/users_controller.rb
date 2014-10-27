@@ -47,6 +47,7 @@ before_action :set_user, only: [:show, :edit, :update, :destroy]
   end
 
   def follow(other_user)
+    binding.pry
     active_relationships.create(followed_id: other_user.id)
   end
 

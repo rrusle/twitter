@@ -10,6 +10,19 @@
 	<%= image_tag @user.avatar %>
 </div>
 
+
+<!-- THIS SHOULDN'T SHOW IF: -->
+	<!-- If you are already following the person -->
+	<!-- If you are looking at your own profile -->
+
+<div class="follow">
+
+	<!-- Display a button that says follow -->
+	
+	<button>Follow</button>
+
+</div>
+
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>
 
