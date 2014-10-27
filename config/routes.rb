@@ -5,8 +5,8 @@ Rails.application.routes.draw do
  resources :tweets
 
  get '/login' => 'session#new'
-  post '/login' => 'session#create'
-  delete '/login' => 'session#delete'
+ post '/login' => 'session#create'
+ delete '/login' => 'session#delete'
   
   resources :users do
     member do
