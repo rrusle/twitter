@@ -1,4 +1,5 @@
 User.destroy_all
+Tweet.destroy_all
 
 u1 = User.create :name => 'gary', :email => 'a@example.com', :password => 'hotdogs', :password_confirmation => 'hotdogs'
 u2 = User.create :name => 'ben', :email => 'b@example.com', :password => 'hotchickens', :password_confirmation => 'hotchickens'
