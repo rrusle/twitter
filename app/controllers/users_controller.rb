@@ -17,7 +17,6 @@ before_action :set_user, only: [:show, :edit, :update, :destroy]
   	@user = User.new(user_params)
 
       if @user.save
-        # binding.pry
         redirect_to @user, notice: 'User was successfully created.' 
       else
         render :new 
