@@ -30,7 +30,7 @@ before_action :set_user, only: [:show, :edit, :update, :destroy, :following, :fo
   end 
 
   def update
-    if
+    if @user.update user_params
       redirect_to @user, notice: 'User was successfully updated.' 
     else
       render :edit 
