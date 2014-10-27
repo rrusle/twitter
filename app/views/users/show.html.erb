@@ -11,16 +11,11 @@
 </div>
 
 
-<!-- THIS SHOULDN'T SHOW IF: -->
-	<!-- If you are already following the person -->
-	<!-- If you are looking at your own profile -->
 
-<div class="follow">
 
-	<!-- Display a button that says follow -->
-	
-	<button>Follow</button>
-
+<div class="follow">	
+	 <%= render 'follow_form' if @current_user.present? %>
+	 <%= render 'shared/stats' %>
 </div>
 
 <%= link_to 'Edit', edit_user_path(@user) %> 
@@ -29,6 +24,6 @@
 <h3>Tweet</h3>
 
 <% @user.tweets.each do |tweet| %>
-	<p><%= link_to tweet.content, tweets %></p>
+	<p><%= link_to tweet.content, tweet %></p>
 <% end %>
 

@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-before_action :set_user, only: [:show, :edit, :update, :destroy]
+before_action :set_user, only: [:show, :edit, :update, :destroy, :following, :followers]
   
   def home
     @user = User.new
@@ -30,7 +30,7 @@ before_action :set_user, only: [:show, :edit, :update, :destroy]
   end 
 
   def update
-    if
+    if @user.update user_params
       redirect_to @user, notice: 'User was successfully updated.' 
     else
       render :edit 
@@ -43,23 +43,18 @@ before_action :set_user, only: [:show, :edit, :update, :destroy]
   def destroy
       @user.destroy
       redirect_to users_url, notice: 'User was successfully delete.' 
-    
   end
 
-  def follow(other_user)
-    binding.pry
-    active_relationships.create(followed_id: other_user.id)
+
+
+  def following
   end
 
-  
-  def unfollow(other_user)
-    active_relationships.find_by(followed_id: other_user.id).destroy
+  def followers
   end
 
-  # Returns true if the current user is following the other user.
-  def following?(other_user)
-    following.include?(other_user)
-  end
+
+
 
   private 
 
