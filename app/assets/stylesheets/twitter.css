@@ -5,8 +5,8 @@
 /* SECTIONS */
 	/* 1. Global */
 	/* 2. Home Page - Logged Out */
-
-
+	/* 3. Explore - All User */
+	/* 4. Profile Page */
 
 
 
@@ -40,10 +40,49 @@ ul li {
 
 
 
+/* 3. Explore - All User */
+.tweets-title, .tweets-listed {
+	border-bottom: 1px solid #e1e8ed;
+	cursor: pointer;
+}
+
+ul .tweets-listed {
+	border-bottom: 1px solid #e1e8ed;
+	cursor: pointer;	
+}
+
+.small-9{
+	width: 50em;
+	border-radius: 6px;
+}
+
+div {
+	display: block;
+}
 
 
 
+/* 4. Profile Page */
+.small-3{
+	border: 1px solid #e1e8ed;
+	background: #FFF;
+	border-radius: 6px;
+}
+.profile-image {
+	background-color: #fff;
+border-radius: 6px;
+margin: -30px 0 0 8px;
+padding: 1px;
+vertical-align: bottom;
 
+}
+
+.profile-name{
+
+}
+.follow-button{
+
+}
 /*
 header nav ul {
 	padding: 0;

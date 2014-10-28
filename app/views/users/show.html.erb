@@ -1,9 +1,9 @@
 <div class="user-profile-background">
 	<div class="small-3 columns">
-		<p> <%= image_tag @user.avatar %></p>
-		<p> <%= @user.name %></p>
-		<div class="follow">	
-	 		<%= render 'follow_form' if @current_user.present? %>
+		<div class="profile-image"> <%= image_tag @user.avatar %></div>
+		<div class="profile-name"> <%= @user.name %></div>
+		<div >	
+	 		<div><%= render 'follow_form' if @current_user.present? %></div>
 	 		<%= render 'shared/stats' %>
 		</div>
 	</div>

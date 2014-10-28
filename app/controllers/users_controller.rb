@@ -1,7 +1,5 @@
 class UsersController < ApplicationController
-before_action :set_user, only: [:show, :edit, :update, :destroy, :following, :followers]
-# before_action :set_tweet, only: [:show, :edit, :update, :destroy]
-  
+
   def home
     @user = User.new
     redirect_to timeline_path unless @current_user.nil?
@@ -9,7 +7,6 @@ before_action :set_user, only: [:show, :edit, :update, :destroy, :following, :fo
 
   def index
   	@users = User.all
-    @tweets = Tweet.all
   end
 
   def new
@@ -17,12 +14,10 @@ before_action :set_user, only: [:show, :edit, :update, :destroy, :following, :fo
   end
 
   def create 
-  	@user = User.new(user_params)
-   
-
+  	@user = User.new user_params
       if @user.save
         session[:user_id] = @user.id
-        redirect_to @user, notice: 'User was successfully created.' 
+        redirect_to @user 
       else
         render :new 
       end
@@ -30,35 +25,29 @@ before_action :set_user, only: [:show, :edit, :update, :destroy, :following, :fo
   end 
   
   def edit 
+    @user = User.find params[:id]
     @user = @current_user
     redirect_to root_path unless @user.present?
   end 
 
   def update
+    @user = User.find params[:id]
     if @user.update user_params
-      redirect_to @user, notice: 'User was successfully updated.' 
+      redirect_to @user
     else
       render :edit 
     end
   end 
 
   def show
-
-    # @tweet = Tweet.new(tweet_params)
-    # @tweet.user = @current_user 
-    #   if @tweet.save
-    #     redirect_to @tweet
-    #   else
-    #     render :new 
-    #   end
+    @user = User.find params[:id]
   end 
 
   def destroy
+      @user = User.find params[:id]
       @user.destroy
-      redirect_to users_url, notice: 'User was successfully delete.' 
+      redirect_to users_url 
   end
-
-
 
   def following
   end
@@ -67,24 +56,12 @@ before_action :set_user, only: [:show, :edit, :update, :destroy, :following, :fo
   end
 
 
-
-
   private 
-
-  def set_user
-    @user = User.find(params[:id])
-  end
     
   def user_params
     params.require(:user).permit(:name, :avatar, :email, :password, :password_confirmation)
   end 
-# def tweet_params
-#     params.require(:tweet).permit( :name,:user_id, :content)
-#   end
 
-#    def set_tweet
-#     @tweet = Tweet.find(params[:id])
-  # end
 end 
 
 

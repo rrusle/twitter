@@ -1,22 +1,23 @@
-<div class="user-profile-background"></div>
+<div class="user-profile-background">
 
-<div class="small-3 columns">
-      
-      <p> List 1</p>
-      <p> List 2 </p>
-</div>
+      <div class="small-3 columns">
+            <p> List 1</p>
+            <p> List 2 </p>
+      </div>
 
-<div class="small-9 columns">
-      <h3>Tweets</h3>
-      <% @users.each do |user| %>
-            <ul>
-                  <li><%= link_to user.name, user %></li>
-                  <% user.tweets.each do |tweet| %>
+      <div class="small-9 columns">
+            <h3 class="tweets-title">Tweets</h3>
+            <div class="tweets-listed">
+            <% @users.each do |user| %>
+                  <ul class="tweets-listed">
+                        <li><%= link_to user.name, user %></li>
+                        <% user.tweets.each do |tweet| %>
                         <li><%= tweet.content %></li>
                         <li><%= time_ago_in_words tweet.created_at %></li>  
-                  <% end %>
-            </ul>
-      <%end%>
+                        <% end %>
+                  </ul>
+            <%end%>
+            </div>
+      </div>
 </div>
-
 
