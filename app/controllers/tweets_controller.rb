@@ -5,6 +5,7 @@ class TweetsController < ApplicationController
     @tweets = Tweet.all
   end
 
+
   
   def show
 
@@ -42,6 +43,12 @@ class TweetsController < ApplicationController
   def destroy
     @tweet.destroy
     redirect_to tweets_url, notice: 'Tweet was successfully deleted.' 
+  end
+
+  def timeline
+    # Read up on ActiveRecord for more about this query:
+    @tweets = Tweet.where("user_id in (?) OR user_id = ?", @current_user.following_ids, @current_user)
+    render :index
   end
 
   

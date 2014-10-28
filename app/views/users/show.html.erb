@@ -4,9 +4,9 @@
 </p>
 
 <div class="avatar">
-	<p>
+	<!-- <p>
 	  <strong>Image:</strong>
-	</p>
+	</p> -->
 	<%= image_tag @user.avatar %>
 </div>
 
@@ -16,14 +16,16 @@
 <div class="follow">	
 	 <%= render 'follow_form' if @current_user.present? %>
 	 <%= render 'shared/stats' %>
-</div>
+<!-- </div>
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+<%= link_to 'Back', users_path %> -->
 
-<h3>Tweet</h3>
-
+<div class="tweets" > 
+	<h3>Tweets</h3>
 <% @user.tweets.each do |tweet| %>
 	<p><%= link_to tweet.content, tweet %></p>
 <% end %>
+
+</div>
 
