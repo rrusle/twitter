@@ -35,7 +35,8 @@
 </p>
 
 <div class="avatar">
-	<!-- <p>
+	<!-- 
+	<p>
 	  <strong>Image:</strong>
 	</p> -->
 	<%= image_tag @user.avatar %>
@@ -51,7 +52,7 @@
 	<h3>Tweets</h3>
 <% @user.tweets.each do |tweet| %>
 	<p><%= link_to tweet.content, tweet %></p>
-<% end %> -->
+<% end %>
 
 </div>
 
