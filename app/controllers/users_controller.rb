@@ -17,6 +17,7 @@ before_action :set_user, only: [:show, :edit, :update, :destroy, :following, :fo
   	@user = User.new(user_params)
 
       if @user.save
+        session[:user_id] = @user.id
         redirect_to @user, notice: 'User was successfully created.' 
       else
         render :new 

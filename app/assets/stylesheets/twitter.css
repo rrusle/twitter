@@ -1,12 +1,46 @@
+/* ================ */
+/*  CSS GUIDELINES  */
+/* ================ */
+
+/* SECTIONS */
+	/* 1. Global */
+	/* 2. Home Page - Logged Out */
+
+
+
+
+
+/* GLOBAL STUFF */
+
 html {
 	background-color: linen;
 }
 
 .container {
-	max-width: 960px;
-	margin: auto;
+	margin-top: 40px;
 }
 
+
+
+/* HOME PAGE - LOGGED OUT */
+
+.sign-up-background {
+	background: hotpink;
+	padding: 40px 40px;
+}
+
+.sign-up-box {
+	box-shadow: 0 0 5px black;
+	background: white;
+}
+
+
+
+
+
+
+
+/*
 header nav ul {
 	padding: 0;
 	margin: 0;
@@ -58,4 +92,5 @@ padding: 0.2em;
 .hic h1 {
 		color: darkcyan;
 }
+*/
 
