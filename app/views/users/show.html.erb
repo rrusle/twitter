@@ -1,21 +1,29 @@
 <div class="user-profile-background">
 	<div class="small-3 columns">
-		<div class="profile-image"> <%= image_tag @user.avatar %></div>
+		<div class="profile-image"> 
+			<% if @user.avatar != "" %>
+				<%= image_tag @user.avatar %>
+			<% else  %>
+				<img src="http://silvervelvetsky.files.wordpress.com/2012/01/936full-jane-birkin1.jpg" />
+			<% end %>
+		</div>
 		<div class="profile-name"> <%= @user.name %></div>
 		<div >	
-	 		<div><%= render 'follow_form' if @current_user.present? %></div>
+	 		<%= render 'follow_form' if @current_user.present? %>
 	 		<%= render 'shared/stats' %>
 		</div>
 	</div>
 	
 	<div class="small-9 columns">
+		<div class="post-tweets">
 		<h4>Compose Tweets</h4>
 
-		<div class="post-tweets">
+		<div><%= link_to 'New Tweet', new_tweet_path %></div>
 		
 		</div>
 		
 		<div class="listed-tweets">
+			<h4>Tweets</h4>
 			<% @user.tweets.each do |tweet| %>
 				<p><%= link_to tweet.content, tweet %></p>
 			<% end %>
