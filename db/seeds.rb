@@ -12,6 +12,7 @@ u2.tweets << t2
 t3 = Tweet.create :content => 'what a day'
 u3.tweets << t3
 
+
 u1.follow(u2)
 u1.follow(u3)
 
