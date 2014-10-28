@@ -10,11 +10,16 @@
       <li>
            <%= link_to 'Show', tweet %>
       </li>
-      <li><%= link_to 'Edit', edit_tweet_path(tweet) if @current_user.try(:id) == tweet.user_id%>
-      </li>   
-        
-      <li><%= link_to 'delete', tweet, method: :delete, data: { confirm: 'Are you sure?' } if @current_user.try(:id) == tweet.user_id %>
+      <% if @current_user.try(:id) == tweet.user_id %>
+      <li>
+        <%= link_to 'Edit', edit_tweet_path(tweet) %>
+      </li> 
+      <% end %>  
+        <% if @current_user.try(:id) == tweet.user_id %>
+      <li>
+        <%= link_to 'delete', tweet, method: :delete, data: { confirm: 'Are you sure?' } %>
       </li>
+      <% end %>
     </ul>  
     <% end %>
 
