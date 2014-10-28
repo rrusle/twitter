@@ -1,12 +1,15 @@
 class UsersController < ApplicationController
 before_action :set_user, only: [:show, :edit, :update, :destroy, :following, :followers]
+# before_action :set_tweet, only: [:show, :edit, :update, :destroy]
   
   def home
     @user = User.new
+    redirect_to timeline_path unless @current_user.nil?
   end
 
   def index
   	@users = User.all
+    @tweets = Tweet.all
   end
 
   def new
@@ -40,6 +43,14 @@ before_action :set_user, only: [:show, :edit, :update, :destroy, :following, :fo
   end 
 
   def show
+
+    # @tweet = Tweet.new(tweet_params)
+    # @tweet.user = @current_user 
+    #   if @tweet.save
+    #     redirect_to @tweet
+    #   else
+    #     render :new 
+    #   end
   end 
 
   def destroy
@@ -67,7 +78,13 @@ before_action :set_user, only: [:show, :edit, :update, :destroy, :following, :fo
   def user_params
     params.require(:user).permit(:name, :avatar, :email, :password, :password_confirmation)
   end 
+# def tweet_params
+#     params.require(:tweet).permit( :name,:user_id, :content)
+#   end
 
+#    def set_tweet
+#     @tweet = Tweet.find(params[:id])
+  # end
 end 
 
 

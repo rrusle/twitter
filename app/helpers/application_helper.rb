@@ -9,7 +9,7 @@ module ApplicationHelper
         nav += "<li class=\"name\">"
           nav += "<h1>"
           if @current_user.present? 
-            nav += link_to('Whistle', users_path)
+            nav += link_to('Whistle', timeline_path)
           else 
             nav += link_to('Whistle', root_path)
           end
@@ -23,7 +23,7 @@ module ApplicationHelper
         nav += "<section class=\"top-bar-section\">"
           nav += "<ul class=\"right\">"
             nav += "<li>" + link_to('Explore', users_path) + "</li>"
-            nav += "<li><a href=\"#\">Following</a></li>"
+            nav += "<li>" + link_to('Following', timeline_path) + "</li>"
             nav += "<li class=\"has-dropdown\">"
               nav += "<a href=\"#\">Settings</a>"
               nav += "<ul class=\"dropdown\">"

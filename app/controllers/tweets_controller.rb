@@ -2,7 +2,10 @@ class TweetsController < ApplicationController
   before_action :set_tweet, only: [:show, :edit, :update, :destroy]
 
   def index
-    @tweets = Tweet.all
+    @tweets = Tweet.where("user_id in (?) OR user_id = ?", @current_user.following_ids, @current_user)
+    # @tweets.select! do |tweet|
+    #   if 
+    # end 
   end
 
 

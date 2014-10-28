@@ -1,23 +1,18 @@
-<div class='alluser'>
+<div class="user-profile-background"></div>
 
-      <h1>THIS IS USERS INDEX</h1>
 
-    <% @users.each do |user| %>
-      <ul>
 
-      	<li><%= link_to user.name, user %></li>
-      
-      	<% if @current_user.try(:id) == user.id %>
-      	<li>
-      		<%= link_to 'Edit', edit_user_path(user) %>
-      	</li>
-				<% end %>
-      	
-      	<% if @current_user.try(:id) == user.id %>
-      	<li>
-      	<%= link_to 'Delete', user, method: :delete, data: { confirm: 'Are you sure?' } %>
-      	</li>
-      <% end %>
-      </ul>
-		<%end%>
+<div class="small-9 columns">
+      <h3>THIS IS USERS INDEX</h3>
+      <% @users.each do |user| %>
+            <ul>
+                  <li><%= link_to user.name, user %></li>
+                  <li><% user.tweets.each do |tweet| %></li>
+                  <li><%= tweet.content %></li>
+                  <li><%= time_ago_in_words tweet.created_at %></li>  
+                  <% end %>
+            </ul>
+      <%end%>
 </div>
+
+
