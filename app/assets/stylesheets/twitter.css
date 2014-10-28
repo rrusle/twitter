@@ -20,6 +20,10 @@ html {
 	margin-top: 40px;
 }
 
+ul li {
+	list-style: none;
+	display: inline;
+}
 
 
 /* HOME PAGE - LOGGED OUT */

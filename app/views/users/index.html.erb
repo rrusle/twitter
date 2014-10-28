@@ -1,15 +1,19 @@
 <div class="user-profile-background"></div>
 
-
+<div class="small-3 columns">
+      
+      <p> List 1</p>
+      <p> List 2 </p>
+</div>
 
 <div class="small-9 columns">
-      <h3>THIS IS USERS INDEX</h3>
+      <h3>Tweets</h3>
       <% @users.each do |user| %>
             <ul>
                   <li><%= link_to user.name, user %></li>
-                  <li><% user.tweets.each do |tweet| %></li>
-                  <li><%= tweet.content %></li>
-                  <li><%= time_ago_in_words tweet.created_at %></li>  
+                  <% user.tweets.each do |tweet| %>
+                        <li><%= tweet.content %></li>
+                        <li><%= time_ago_in_words tweet.created_at %></li>  
                   <% end %>
             </ul>
       <%end%>
