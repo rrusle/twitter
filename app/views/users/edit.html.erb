@@ -1,5 +1,5 @@
 <div class="">
-<div class="small-3 columns">
+	<div class="small-3 columns">
 		<p> <%= image_tag @user.avatar %></p>
 		<p> <%= @user.name %></p>
 		<div class="follow">	
@@ -8,12 +8,10 @@
 		</div>
 	</div>
 
-<div class="small-9 columns">
-	<h1>Account</h1>
-	<h4>Change your account and settings.</h4>
+	<div class="small-9 columns">
+		<h1>Account</h1>
+		<h4>Change your account and settings.</h4>
 
-	<%= render :partial => 'form' %>
-
-	
-</div>
+		<%= render :partial => 'form' %>	
+	</div>
 </div>

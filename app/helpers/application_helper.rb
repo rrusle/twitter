@@ -9,7 +9,7 @@ module ApplicationHelper
         nav += "<li class=\"name\">"
           nav += "<h1>"
           if @current_user.present? 
-            nav += link_to('Whistle', timeline_path)
+            nav += link_to('Whistle', user_path(@current_user))
           else 
             nav += link_to('Whistle', root_path)
           end

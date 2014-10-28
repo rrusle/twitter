@@ -11,10 +11,10 @@
             <% @users.each do |user| %>
                   <ul class="tweets-listed">
                         <li><%= link_to user.name, user %></li>
-                        <% user.tweets.each do |tweet| %>
+                        <li><% user.tweets.each do |tweet| %></li>
                         <li><%= tweet.content %></li>
                         <li><%= time_ago_in_words tweet.created_at %></li>  
-                        <% end %>
+                        <li><% end %></li>
                   </ul>
             <%end%>
             </div>

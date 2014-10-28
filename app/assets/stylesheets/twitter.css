@@ -92,6 +92,13 @@ div {
 .listed-tweets{
 	border: 1px solid #e1e8ed;
 }
+
+.field { 
+display: block;
+padding: 0.2em;
+font-size: 16px;
+
+}
 /*
 header nav ul {
 	padding: 0;
@@ -112,12 +119,7 @@ header nav ul li:hover {
 	background-color: white;
 }
 
-.field { 
-display: block;
-padding: 0.2em;
-font-size: 16px;
 
-}
 .field label, input[type=password] {
 display: block;
 padding: 0.2em;
