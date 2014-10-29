@@ -1,10 +1,12 @@
 <p>
   <strong>User:</strong>
+  
   <%= @tweet.user.name if @tweet.user %>
 </p>
 
 <p>
   <strong>tweet:</strong>
+
   <%= @tweet.content %>
 </p>
 	<% if @current_user.try(:id) == @tweet.user_id %>
