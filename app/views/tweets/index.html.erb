@@ -13,7 +13,12 @@
 
     <div>
       <% @tweets.each do |tweet| %>
-      <ul> 
+      <ul>
+        <li>
+          <div class="tweetAvatar">
+            <%= image_tag tweet.user.avatar if tweet.user.avatar.present?  %> 
+          </div>
+        </li>
         <li><%= tweet.user.name %></li>
         <li><%= tweet.content %></li>
         <li><%= time_ago_in_words tweet.created_at %></li>      

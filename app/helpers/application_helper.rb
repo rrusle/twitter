@@ -23,7 +23,9 @@ module ApplicationHelper
         nav += "<section class=\"top-bar-section\">"
           nav += "<ul class=\"right\">"
             nav += "<li>" + link_to('Explore', users_path) + "</li>"
+
             nav += "<li>" + link_to('Following', tweets_path) + "</li>"
+
             nav += "<li class=\"has-dropdown\">"
               nav += "<a href=\"#\">Settings</a>"
               nav += "<ul class=\"dropdown\">"
