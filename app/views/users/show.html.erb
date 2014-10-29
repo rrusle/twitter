@@ -1,5 +1,5 @@
 <div class="user-profile-background">
-	<div class="small-3 columns">
+	<div class="small-3 columns profile-side">
 		<div class="profile-image"> 
 			<% if @user.avatar != "" %>
 				<%= image_tag @user.avatar %>
@@ -16,11 +16,14 @@
 	
 	<div class="small-9 columns">
 		<div class="post-tweets">
-		<h4>Compose Tweets</h4>
 		
-		<%= render 'tweets/form' %>
+		<%  if @user == @current_user %>
+			<h4>Compose Tweets</h4>
+			<%= render 'tweets/form' %>
+		<% else %>
 
-		<div><%= link_to 'New Tweet', new_tweet_path %></div>
+		<% end  %>
+		
 		
 		</div>
 		

@@ -63,11 +63,36 @@ div {
 
 
 /* 4. Profile Page */
-.small-3{
+.tweet-side {
+	
+  
+}
+.profile-side{
+	
+}
+
+.small-3 {
 	border: 1px solid #e1e8ed;
 	background: #FFF;
 	border-radius: 6px;
+	width: 20%;
+  	min-height: 200px;
+  	background: gainsboro;	
 }
+div.small-3 div {
+  	height: 50px;
+  	width: 80%;
+  	margin: 10px auto;
+	border-top: 1px solid black;
+}
+
+.small-9{
+	width: 80%;
+  	background: hotpink;
+  	min-height: 200px;
+  
+}
+
 .profile-image {
 	background-color: #fff;
 	border-radius: 6px;
@@ -91,12 +116,17 @@ div {
 
 .listed-tweets{
 	border: 1px solid #e1e8ed;
+	border-bottom: 1px solid #e1e8ed;
 }
 
 .field { 
-display: block;
-padding: 0.2em;
-font-size: 16px;
+	display: block;
+	padding: 0.2em;
+	font-size: 16px;
+
+}
+.small-11{
+	text-align: center;
 
 }
 /*

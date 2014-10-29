@@ -1,11 +1,12 @@
-<div class="">
+<div class="following-main-container">
   
- 
-    <div class="small-3 columns">
-   
+ <div class="row">
+    <div class="small-3 columns tweet-side">
+    <h5>Quick Discover</h5>
+    <div><%= link_to 'activity', tweet_path %></div>
+    <div><%= link_to 'who to follow', users_path %></div>
     </div>
-
-  </div>
+  
 
   <div class="small-9 columns">
     <div><%= link_to 'New Tweet', new_tweet_path %></div>
@@ -20,8 +21,12 @@
       </ul>
       <% end %>
     </div>
+  
   </div>
+
 </div>
+</div>
+
 
 
 
