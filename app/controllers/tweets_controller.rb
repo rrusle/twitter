@@ -7,11 +7,7 @@ class TweetsController < ApplicationController
 
   def show
      @tweet = Tweet.find params[:id]
-     if @tweet.user = @current_user 
-        redirect_to @tweet.user.id
-      else 
-        render
-      end 
+    
   end
 
   def new
