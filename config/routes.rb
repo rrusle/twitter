@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
  resources :users
  resources :tweets
- get '/timeline'=> 'tweets#timeline'
+
 
  get '/login' => 'session#new'
  post '/login' => 'session#create'

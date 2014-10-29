@@ -1,9 +1,9 @@
 class SessionController < ApplicationController
-# Login form
+# login form
   def new
   end
 
-# Where the login form POSTs data
+# where the login form POSTs data
   def create
     user = User.where(:name => params[:name]).first
     if user.present? && user.authenticate(params[:password])
@@ -14,7 +14,7 @@ class SessionController < ApplicationController
     end
   end
 
-# Logout
+# logout session
   def delete
     session[:user_id] = nil
     redirect_to root_path

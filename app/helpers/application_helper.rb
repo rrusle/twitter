@@ -9,7 +9,7 @@ module ApplicationHelper
         nav += "<li class=\"name\">"
           nav += "<h1>"
           if @current_user.present? 
-            nav += link_to('Whistle', users_path)
+            nav += link_to('Whistle', user_path(@current_user))
           else 
             nav += link_to('Whistle', root_path)
           end
@@ -23,11 +23,14 @@ module ApplicationHelper
         nav += "<section class=\"top-bar-section\">"
           nav += "<ul class=\"right\">"
             nav += "<li>" + link_to('Explore', users_path) + "</li>"
-            nav += "<li>" + link_to('Timeline', timeline_path) + "</li>"
+
+            nav += "<li>" + link_to('Following', tweets_path) + "</li>"
+
             nav += "<li class=\"has-dropdown\">"
               nav += "<a href=\"#\">Settings</a>"
               nav += "<ul class=\"dropdown\">"
 
+                nav += "<li>" + link_to('View Profile', user_path(@current_user)) + "</li>"
                 nav += "<li>" + link_to('Edit Profile', edit_user_path(@current_user)) + "</li>"
                 nav += "<li>" + link_to('Sign Out', login_path, :method => :delete, :data => { :confirm => 'Are you sure?' }) + "</li>"
 
@@ -41,7 +44,7 @@ module ApplicationHelper
       nav += "<section class=\"top-bar-section\">"
         nav += "<ul class=\"right\">"
           nav += "<li>"
-            nav += "<a href=\"/explore\">Explore</a>"
+          nav += "<li>" + link_to('Explore', users_path) + "</li>"
           nav += "</li>"
           nav += "<li>"
           nav += "<a href=\"/login\">Log In</a>"

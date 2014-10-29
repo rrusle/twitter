@@ -1,31 +1,32 @@
-<h1>Listing tweets</h1>
+<div class="following-main-container">
+  
+ <div class="row">
+    <div class="small-3 columns tweet-side">
+    <h5>Quick Discover</h5>
+    <div><%= link_to 'activity', tweet_path %></div>
+    <div><%= link_to 'who to follow', users_path %></div>
+    </div>
+  
 
+  <div class="small-9 columns">
+    <div><%= link_to 'New Tweet', new_tweet_path %></div>
 
-  <div>
-    <% @tweets.each do |tweet| %>
-    <ul> 
-      <li><%= tweet.user.name %></li>
-      <li><%= tweet.content %></li>
-      <li><%= time_ago_in_words tweet.created_at %></li>      
-      <li>
-           <%= link_to 'Show', tweet %>
-      </li>
-      <% if @current_user.try(:id) == tweet.user_id %>
-      <li>
-        <%= link_to 'Edit', edit_tweet_path(tweet) %>
-      </li> 
-      <% end %>  
-        <% if @current_user.try(:id) == tweet.user_id %>
-      <li>
-        <%= link_to 'delete', tweet, method: :delete, data: { confirm: 'Are you sure?' } %>
-      </li>
+    <div>
+      <% @tweets.each do |tweet| %>
+      <ul> 
+        <li><%= tweet.user.name %></li>
+        <li><%= tweet.content %></li>
+        <li><%= time_ago_in_words tweet.created_at %></li>      
+        <li><%= link_to 'Show', tweet %></li>
+      </ul>
       <% end %>
-    </ul>  
-    <% end %>
-
-
-<br>
-
-<%= link_to 'New Tweet', new_tweet_path %>
+    </div>
+  
+  </div>
 
 </div>
+</div>
+
+
+
+

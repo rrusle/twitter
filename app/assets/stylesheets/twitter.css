@@ -5,8 +5,8 @@
 /* SECTIONS */
 	/* 1. Global */
 	/* 2. Home Page - Logged Out */
-
-
+	/* 3. Explore - All User */
+	/* 4. Profile Page */
 
 
 
@@ -20,6 +20,10 @@ html {
 	margin-top: 40px;
 }
 
+ul li {
+	list-style: none;
+	display: inline;
+}
 
 
 /* HOME PAGE - LOGGED OUT */
@@ -36,10 +40,95 @@ html {
 
 
 
+/* 3. Explore - All User */
+.tweets-title, .tweets-listed {
+	border-bottom: 1px solid #e1e8ed;
+	cursor: pointer;
+}
+
+ul .tweets-listed {
+	border-bottom: 1px solid #e1e8ed;
+	cursor: pointer;	
+}
+
+.small-9{
+	width: 50em;
+	border-radius: 6px;
+}
+
+div {
+	display: block;
+}
 
 
 
+/* 4. Profile Page */
+.tweet-side {
+	
+  
+}
+.profile-side{
+	
+}
 
+.small-3 {
+	border: 1px solid #e1e8ed;
+	background: #FFF;
+	border-radius: 6px;
+	width: 20%;
+  	min-height: 200px;
+  	background: gainsboro;	
+}
+div.small-3 div {
+  	height: 50px;
+  	width: 80%;
+  	margin: 10px auto;
+	border-top: 1px solid black;
+}
+
+.small-9{
+	width: 80%;
+  	background: hotpink;
+  	min-height: 200px;
+  
+}
+
+.profile-image {
+	background-color: #fff;
+	border-radius: 6px;
+	margin: -30px 0 0 8px;
+	padding: 1px;
+	vertical-align: bottom;
+
+}
+
+.profile-name{
+
+}
+.button{
+
+}
+
+.post-tweets{	
+	border: 1px solid #e1e8ed;
+
+}
+
+.listed-tweets{
+	border: 1px solid #e1e8ed;
+	border-bottom: 1px solid #e1e8ed;
+}
+
+.field { 
+	display: block;
+	padding: 0.2em;
+	font-size: 16px;
+
+}
+.small-11{
+	text-align: center;
+
+}
 /*
 header nav ul {
 	padding: 0;
@@ -60,12 +149,7 @@ header nav ul li:hover {
 	background-color: white;
 }
 
-.field { 
-display: block;
-padding: 0.2em;
-font-size: 16px;
 
-}
 .field label, input[type=password] {
 display: block;
 padding: 0.2em;
