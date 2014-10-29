@@ -1,5 +1,5 @@
 class TweetsController < ApplicationController
-  before_action :set_tweet, only: [:show, :edit, :update, :destroy]
+  
 
   def index
     @tweets = Tweet.all
@@ -8,7 +8,7 @@ class TweetsController < ApplicationController
 
   
   def show
-
+    @tweet = Tweet.find(params[:id])
   end
 
 
@@ -18,6 +18,7 @@ class TweetsController < ApplicationController
 
   
   def edit
+    @tweet = Tweet.find(params[:id])
   end
 
 
@@ -32,6 +33,7 @@ class TweetsController < ApplicationController
   end
 
   def update
+    @tweet = Tweet.find(params[:id])
       if @tweet.update(tweet_params)
         redirect_to @tweet, notice: 'Tweet was successfully updated.'
       else
@@ -41,6 +43,7 @@ class TweetsController < ApplicationController
 
 
   def destroy
+    @tweet = Tweet.find(params[:id])
     @tweet.destroy
     redirect_to tweets_url, notice: 'Tweet was successfully deleted.' 
   end
@@ -52,13 +55,9 @@ class TweetsController < ApplicationController
   end
 
   
-  private
-  def set_tweet
-    @tweet = Tweet.find(params[:id])
-  end
  
   def tweet_params
-    params.require(:tweet).permit( :name,:user_id, :content)
+    params.require(:tweet).permit( :name, :user_id, :content)
   end
 
 end
