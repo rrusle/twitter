@@ -36,7 +36,6 @@ class TweetsController < ApplicationController
   end
 
   def update
-
     @tweet = Tweet.findparams[:id]
       if @tweet.update tweet_params
         redirect_to @tweet
