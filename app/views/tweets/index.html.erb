@@ -11,7 +11,7 @@
 
   <div class="small-9 columns">
     <div>
-      <% @tweets.each do |tweet| %>
+      <% @tweets.order('created_at DESC').each do |tweet| %>
         <div class="row">
           <div class="small-2 columns">
             <% if tweet.user.avatar != "" %>
@@ -22,8 +22,8 @@
             <%= tweet.user.name %>
           </div>
           <div class="small-10 columns">
-            <%= tweet.content %>
-            <%= time_ago_in_words tweet.created_at %>
+            <p><%= tweet.content %></p>
+            <p class="bottom-margin"><%= time_ago_in_words tweet.created_at %> &nbsp; ago</p>
           </div>
  
                     <!-- <li><%= link_to 'Show', tweet %></li> -->
