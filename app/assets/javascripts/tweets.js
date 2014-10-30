@@ -6,4 +6,10 @@ $(document).ready(function () {
 		$tweet.fadeIn();
 		$('#tweet_content').val('');
 	});
+
+
+	$('#profile-image').on('click', function(){
+
+	});
 });
+

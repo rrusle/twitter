@@ -1,5 +1,13 @@
-<h2>Followers</h2>
-<ul>
-<% @user.followers.each do |follower| %>
-	<li><%= link_to(follower.name, follower) %></li>
-<% end %>
+<div class="small-12 columns">
+            <h3 class="tweets-title">Followers</h3>
+            <div class="tweets-listed">
+                  <div class="row">
+
+                        <% @user.followers.each do |follower| %>
+                              <div class="small-12 medium-6 large-4 columns user-panel">
+                                   <div><%= image_tag follower.avatar %></div>
+                                    <div><%= link_to(follower.name, follower) %></div>
+                        <% end %>
+                  </div>
+            </div>
+      </div>

@@ -1,4 +1,22 @@
-TODO: Add a proper readme.
-TODO: Finish project.
+== Welcome to Whistle
 
+Set up instruction
+===
+1. Install below gem 
+	gem 'haml'
+	gem 'bcrypt'
+	gem 'foundation-rails'
+2. On the command line type "bundle"
+3. On the command line type "rails server"
+4. Go to your browser and paste this link https://localhost:3000
+
+
+Routes structure and path
+==
+http://localhost:3000/rails/info/routes
+
+
+Site 
+==
+https://whistleit.herokuapp.com
 
