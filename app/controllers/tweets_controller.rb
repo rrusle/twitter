@@ -24,7 +24,10 @@ class TweetsController < ApplicationController
     @tweet = Tweet.new tweet_params
     @tweet.user = @current_user 
       if @tweet.save
-        redirect_to @tweet
+        respond_to do |format|
+          format.html { redirect_to @tweet }
+          format.js { render :partial => 'tweet', :as => :tweet }
+        end
       else
         render :new 
       end
