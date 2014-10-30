@@ -3,27 +3,32 @@
  <div class="row">
     <div class="small-3 columns tweet-side">
     <h5>Quick Discover</h5>
-    <div><%= link_to 'activity', users_path %></div>
-    <div><%= link_to 'who to follow', users_path %></div>
+      <%= link_to 'Your Activity', user_path(@current_user) %>
+      <%= link_to 'Who to Follow', users_path %>
+      <%= link_to 'New Tweet', new_tweet_path %>
     </div>
   
 
   <div class="small-9 columns">
-    <div><%= link_to 'New Tweet', new_tweet_path %></div>
-
     <div>
       <% @tweets.each do |tweet| %>
-      <ul>
-        <li>
-          <div class="tweetAvatar">
-            <%= image_tag tweet.user.avatar if tweet.user.avatar.present?  %> 
+        <div class="row">
+          <div class="small-2 columns">
+            <% if tweet.user.avatar != "" %>
+              <%= image_tag tweet.user.avatar %>
+            <% else  %>
+              <img src="http://silvervelvetsky.files.wordpress.com/2012/01/936full-jane-birkin1.jpg" />
+            <% end %>
+            <%= tweet.user.name %>
           </div>
-        </li>
-        <li><%= tweet.user.name %></li>
-        <li><%= tweet.content %></li>
-        <li><%= time_ago_in_words tweet.created_at %></li>      
-        <li><%= link_to 'Show', tweet %></li>
-      </ul>
+          <div class="small-10 columns">
+            <%= tweet.content %>
+            <%= time_ago_in_words tweet.created_at %>
+          </div>
+ 
+                    <!-- <li><%= link_to 'Show', tweet %></li> -->
+        </div>
+        <hr>
       <% end %>
     </div>
   
@@ -31,7 +36,3 @@
 
 </div>
 </div>
-
-
-
-

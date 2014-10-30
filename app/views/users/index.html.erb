@@ -1,22 +1,20 @@
 <div class="user-profile-background">
 
-      <div class="small-3 columns">
-            <p> List 1</p>
-            <p> List 2 </p>
-      </div>
-
-      <div class="small-9 columns">
+      <div class="small-12 columns">
             <h3 class="tweets-title">Tweets</h3>
             <div class="tweets-listed">
-            <% @users.each do |user| %>
-                  <ul class="tweets-listed">
-                        <li><%= link_to user.name, user %></li>
-                        <li><% user.tweets.each do |tweet| %></li>
-                        <li><%= tweet.content %></li>
-                        <li><%= time_ago_in_words tweet.created_at %></li>  
-                        <li><% end %></li>
-                  </ul>
-            <%end%>
+                  <div class="row">
+                        <% @users.each do |user| %>
+                              <div class="small-12 medium-6 large-4 columns user-panel">
+                                    <% if user.avatar != "" %>
+                                          <%= image_tag user.avatar %>
+                                    <% else  %>
+                                          <img src="http://1.bp.blogspot.com/-FkkeMFCEBl0/UHhYKipl7lI/AAAAAAAAXEU/3H4h6B7ac4g/s1600/jane_birkin-quotes.jpg" />
+                                    <% end %>
+                                    <%= link_to user.name, user %>
+                              </div>
+                        <% end %>
+                  </div>
             </div>
       </div>
 </div>
