@@ -68,12 +68,25 @@ div {
 
 
 /* 4. Profile Page */
+.following-main-container .row {
+	max-width: 100%;
+}
+
+.following-main-container .tweet-side {
+	margin-top: 0;
+}
+
+
 .tweet-side {
-	height: 50px;
-  	width: 80%;
+	/*height: 50px;*/
+  	/*width: 80%;*/
   	margin: 10px auto;
 	border-top: 1px solid black;
   
+}
+
+.tweet-side a {
+	display: block;
 }
 .profile-side{
 	
@@ -89,7 +102,7 @@ div {
 	background: #FFF;
 	border-radius: 6px;
 	/*width: 20%;*/
-  	min-height: 200px;
+  	/*min-height: 200px;*/
   	/*background: gainsboro;	*/
 }
 div.small-3 div {
@@ -106,6 +119,10 @@ div.small-3 div {
 .columns {
 	background: white;
 	border: 1px solid gray;
+}
+
+.columns .columns {
+	border: none;
 }
 
 .profile-image {
