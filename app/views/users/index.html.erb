@@ -1,7 +1,6 @@
 <div class="user-profile-background">
-
       <div class="small-12 columns">
-            <h3 class="tweets-title">Tweets</h3>
+            <h3 class="tweets-title">Who to follow</h3>
             <div class="tweets-listed">
                   <div class="row">
                         <% @users.each do |user| %>
@@ -9,9 +8,9 @@
                                     <% if user.avatar != "" %>
                                           <%= image_tag user.avatar %>
                                     <% else  %>
-                                          <img src="http://1.bp.blogspot.com/-FkkeMFCEBl0/UHhYKipl7lI/AAAAAAAAXEU/3H4h6B7ac4g/s1600/jane_birkin-quotes.jpg" />
+                                          <img src="http://silvervelvetsky.files.wordpress.com/2012/01/936full-jane-birkin1.jpg" />
                                     <% end %>
-                                    <%= link_to user.name, user %>
+                                          <%= link_to user.name, user %>
                               </div>
                         <% end %>
                   </div>
