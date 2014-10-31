@@ -9,7 +9,9 @@ module ApplicationHelper
         nav += "<li class=\"name\">"
           nav += "<h1>"
           if @current_user.present? 
-            nav += link_to('Whistle', user_path(@current_user))
+            nav += link_to("Whistle", user_path(@current_user)) 
+            # nav += link_to("Welcome #{ @current_user.name }", user_path(@current_user))  
+            # nav += "Welcome #{ @current_user.name }"
           else 
             nav += link_to('Whistle', root_path)
           end
