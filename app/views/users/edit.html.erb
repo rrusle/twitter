@@ -1,6 +1,11 @@
-<div class="">
+<div>
 	<div class="small-3 columns">
-		<p> <%= image_tag @user.avatar %></p>
+			<% if @user.avatar != "" %>
+				<%= image_tag @user.avatar %>
+			<% else  %>
+				<img src="http://silvervelvetsky.files.wordpress.com/2012/01/936full-jane-birkin1.jpg" />
+			<% end %>
+		
 		<p> <%= @user.name %></p>
 		<div class="follow">	
 	 		<%= render 'follow_form' if @current_user.present? %>

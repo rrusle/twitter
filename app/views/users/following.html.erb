@@ -1,13 +1,13 @@
 <div class="small-12 columns">
-            <h3 class="tweets-title">Following</h3>
-            <div class="tweets-listed">
-                  <div class="row">
-
-                        <% @user.following.each do |following| %>
-                              <div class="small-12 medium-6 large-4 columns user-panel">
-                                   <div><%= image_tag following.avatar %></div>
-                                    <div><%= link_to(following.name, following) %></div>
+      <h3 class="tweets-title">Following</h3>
+      <div class="tweets-listed">
+            <div class="row">
+                   <% @user.following.each do |following| %>
+                        <div class="small-12 medium-6 large-4 columns user-panel">
+                              <div><%= image_tag following.avatar %></div>
+                               <div><%= link_to(following.name, following) %></div>
                         <% end %>
-                  </div>
+                   </div>     
             </div>
       </div>
+</div>

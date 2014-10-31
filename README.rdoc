@@ -1,8 +1,13 @@
 == Welcome to Whistle
 
+Whistle is a social networking site where people can post tweets on the profile and follow other users.
+You can also view all of their post(your follower). 
+
+More feature may be added later on 
+
 Set up instruction
 ===
-1. Install below gem 
+1. Add below gem to your Gemfile 
 	gem 'haml'
 	gem 'bcrypt'
 	gem 'foundation-rails'
@@ -16,7 +21,7 @@ Routes structure and path
 http://localhost:3000/rails/info/routes
 
 
-Site 
+For demo site
 ==
 https://whistleit.herokuapp.com
 

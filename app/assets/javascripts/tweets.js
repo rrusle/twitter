@@ -8,8 +8,8 @@ $(document).ready(function () {
 	});
 
 
-	$('#profile-image').on('click', function(){
 
-	});
+  	
+
 });
 

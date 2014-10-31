@@ -2,30 +2,27 @@
 
 	<h1>ALREADY LOGGED IN</h1>
 
-
 <% else %>
 
 	<div class="row sign-up-background">
 
-
 		<div class="small-11 medium-8 large-6 small-centered columns sign-up-box">
 			<h3>Sign Up Here!</h3>
-			<% if @user.errors.any? %>
-    <div id="error_explanation">
-     
-      <h2>
-      	<%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:
-      </h2>
+				<% if @user.errors.any? %>
+    		<div id="error_explanation">
+      			<h2>
+      				<%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:
+      			</h2>
 
-      <ul>
-      	<% @user.errors.full_messages.each do |message| %>
-        	<li><%= message %></li>
-      	<% end %>
-      </ul>
+      		<ul>
+      			<% @user.errors.full_messages.each do |message| %>
+        			<li><%= message %></li>
+      			<% end %>
+      		</ul>
 
-    </div>
+    		</div>
 <% end %>
-			<%= form_for @user do |f| %>
+	<%= form_for @user do |f| %>
 		<p>
 			<%= f.label :name %>
 			<%= f.text_field :name %>
