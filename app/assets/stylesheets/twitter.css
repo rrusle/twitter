@@ -55,8 +55,9 @@ div {
 /* HOME PAGE - LOGGED OUT */
 
 .sign-up-background {
-	background: hotpink;
+	background: url(http://i1231.photobucket.com/albums/ee503/Abs8282/whisper_music.jpg);
 	padding: 40px 40px;
+	background-repeat: no-repeat;
 }
 
 .sign-up-box {
