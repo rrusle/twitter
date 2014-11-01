@@ -7,12 +7,12 @@ More feature may be added later on
 ==
 Set up instruction
 
-1. Add below gem to your Gemfile 
-~~~
+1. Add below gem 
+```
 	gem 'haml'
 	gem 'bcrypt'
 	gem 'foundation-rails'
-~~~	
+```	
 2. On the command line type "bundle"
 3. On the command line type "rails server"
 4. Go to your browser and paste this link https://localhost:3000
