@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
 
   def home
-    @user = User.new
+    @users = User.new
     redirect_to user_path(@current_user) unless @current_user.nil?
   end
 
